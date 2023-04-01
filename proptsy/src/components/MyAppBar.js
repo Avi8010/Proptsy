@@ -1,22 +1,14 @@
-// import * as React from "react";
-// import AppBar from "@mui/material/AppBar";
-// import Box from "@mui/material/Box";
-// import Toolbar from "@mui/material/Toolbar";
-// import IconButton from "@mui/material/IconButton";
-// import Typography from "@mui/material/Typography";
-// import Menu from "@mui/material/Menu";
-// import MenuIcon from "@material-ui/icons/Menu";
-
-import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from "@material-ui/core";
-
+import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useState } from "react";
 import { makeStyles } from "@material-ui/core";
-// import bImg from "../images/navpic8.jpg";
+import bImg from "../images/navpic8.jpg";
+import icon from "../images/icon.png";
+import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from "@mui/material";
+import { MenuBook, MenuOpen, MenuRounded } from "@mui/icons-material";
 
 const pages = ["Buy", "Sell", "Rent"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
 const useStyles = makeStyles((theme) => ({
   header: {
     backgroundImage: `url(${bImg})`,
@@ -28,17 +20,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const styles = {
-  customizeToolbar: {
-    minHeight: 72,
-  },
-};
+// const styles = {
+//   customizeToolbar: {
+//     minHeight: 72,
+//   },
+// };
 
 function MyAppBar({ isBg }) {
   const navigate = useNavigate();
 
   const classes1 = useStyles();
-  useEffect(async () => {
+  // useEffect(async () => {
     // const token = localStorage.getItem("accessToken");
     // try {
     //   if (token === "null") throw "null";
@@ -55,10 +47,9 @@ function MyAppBar({ isBg }) {
     //     if (!msg) navigate("/login");
     //   });
     // }
-  });
-
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // });
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -70,7 +61,7 @@ function MyAppBar({ isBg }) {
   const handleCloseNavMenu = (e) => {
     console.log(e.target.value);
     setAnchorElNav(null);
-    // navigate("/")
+    // navigate("/");
   };
 
   const handleCloseUserMenu = () => {
@@ -88,7 +79,7 @@ function MyAppBar({ isBg }) {
   }
 
   function handleMenuClickEvent(menuChoice) {
-    if(menuChoice == "Logout") {
+    if(menuChoice === "Logout") {
       logoutUser()
       alert("User Logged Out.");
 
@@ -114,21 +105,21 @@ function MyAppBar({ isBg }) {
           opacity: "70%",
         }}
       >
-        <Container maxWidth="xl" >
+        <Container maxWidth="lg" >
           <Toolbar disableGutters>
             <Box
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-              style={{ alignSelf: "start", color: "white" }}
+              style={{ alignSelf: "start", color: "black" }}
             >
               <IconButton
-                size="large"
-                aria-label="suraj"
+                size="medium"
+                aria-label="button"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
                 color="inherit"
               >
-                <MenuIcon />
+                <MenuBook />
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -150,20 +141,21 @@ function MyAppBar({ isBg }) {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Typography textalign="center">{page}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
             <img
-              src={Icon}
+              src={icon}
               alt="logo"
               onClick={() => {
                 navigate("/");
               }}
               style={{
                 cursor: "pointer",
-                width: "120px",
+                width: "150px",
+                height:"60px",
                 marginRight: "8rem",
               }}
             />
@@ -186,7 +178,7 @@ function MyAppBar({ isBg }) {
                     display: "block",
                     fontWeight: "medium",
                     fontSize: "18px",
-                    marginRight: "10px",
+                    marginRight: "1px",
                   }}
                 >
                   {page}
@@ -221,7 +213,7 @@ function MyAppBar({ isBg }) {
                     <Typography
                       value={setting}
                       onClick={() => handleMenuClickEvent(setting)}
-                      textAlign="center"
+                      textalign="center"
                     >
                       {setting}
                     </Typography>
@@ -235,5 +227,4 @@ function MyAppBar({ isBg }) {
     </div>
   );
 }
-
 export default MyAppBar;

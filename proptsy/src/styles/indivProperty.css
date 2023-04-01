@@ -1,0 +1,226 @@
+.indivProperty {
+    background-color:  	white;
+    padding-bottom: 15%;
+    position: relative;
+}
+
+.propertyImage {
+    opacity: 50%;
+    width: 100%;
+    height: 46vh;
+    object-fit: cover;
+}
+
+.propertyContainer {
+    position: relative;
+}
+
+.propertyTitle {
+    bottom: 10%;
+    margin-left: 5%;
+    position: absolute;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.overlay {
+    position: absolute; 
+    bottom: 0; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1; 
+    width: 100%;
+    height: 100%;
+    transition: .5s ease;
+    opacity: 0.8;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.35);
+    
+}
+
+.propertyTitle .descr {
+    font-size: 140%;
+    text-align: left;
+}
+
+.propertyTitle .name {
+    font-size: 250%;
+    text-align: left;
+}
+
+.propertyTitle .location {
+    text-align: left;
+    opacity: 80%;
+}
+
+.propertyDetails {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7vh;
+    text-align: center;
+    color: #630330;
+}
+/* 
+.propertyDetails {
+    background-color: white;
+    
+    box-shadow: 3px 3px 6px #BEBEBE;
+    border-radius: 10px;
+    border: solid 1px #E0E0E0;
+} */
+
+.price{
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+}
+
+.area {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    margin-top: 0.7%;
+}
+
+.propertyStatus {
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+    padding-top: 0.7%;
+}
+
+
+
+.propertyDetails .priceRange {
+    font-size: 230%;
+    color: #0275d8 ;
+}
+
+.propertyDetails .basePrice {
+    font-size: 110%;
+    color: #d9534f;
+}
+
+.propertyDetails .size {
+    font-size: 150%;
+    color: #0275d8 ;
+}
+
+.propertyDetails .areaType {
+    color: #d9534f;
+}
+
+.propertyStatus .status {
+    font-size: 150%;
+    color: #0275d8 ;
+}
+
+.propertyStatus .possession {
+    color: #d9534f;
+}
+
+
+.highlights {
+    text-align: left;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+
+.btns {
+    margin-left: 10%;
+    text-align: left;
+    margin-top: 3%;
+}
+
+.btns .map {
+    margin-left: 3%;
+}
+
+.progressBarContainer {
+    position: absolute;
+    vertical-align: middle;
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+}
+
+.progressBar {
+    margin-top: 50vh;
+}
+
+.facContainer {
+    width: 80%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.facilityContainer {
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    width: 10%;
+}
+
+.facility {
+    color:cadetblue;
+}
+
+.topFac {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 200%;
+}
+
+@media only screen and (max-width: 1150px) {
+    .propertyDetails .priceRange {
+        font-size: 200%;
+    }
+    
+    .propertyDetails .basePrice {
+        font-size: 100%;
+    }
+    
+    .propertyDetails .size{
+        font-size: 130%;
+    }
+    
+    .propertyDetails .status{
+        font-size: 130%;
+    }
+
+    .propertyDetails .areaType {
+        font-size: 90%;
+    }
+
+    .propertyDetails .possession {
+        font-size: 90%;
+    }
+    
+  }
+
+@media only screen and (max-width: 800px) {
+    .propertyTitle .descr {
+        font-size: 130%;
+    }
+    .propertyTitle .name {
+        font-size: 220%;
+    }
+    .propertyTitle .location {
+        font-size: 80%;
+    }
+
+    .propertyDetails .priceRange {
+        font-size: 150%;
+    }
+    
+    .propertyDetails .basePrice {
+        font-size: 90%;
+    }
+  }

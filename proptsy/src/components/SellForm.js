@@ -1,15 +1,13 @@
 import React, { useEffect } from "react";
-import { withStyles, MenuItem, Slider } from "@material-ui/core";
+import { withStyles, MenuItem } from "@material-ui/core";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 // import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
-import Icon from "@material-ui/core/Icon";
 import { teal, grey, lightgoldenrodyellow } from "@material-ui/core/colors";
 import { FormControl } from "@material-ui/core";
 import { InputLabel } from "@material-ui/core";
@@ -18,6 +16,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/sellForm.css";
+// import { DesktopDatePicker } from "@mui/lab";
+import { Slider } from "@mui/material";
+import { DesktopDatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 
 const styles = (theme) => ({
   root: {
@@ -154,7 +155,7 @@ function SellForm(props) {
       name: name,
       location: location,
       propertyType: propertyType,
-      type: sellType == "Sell Property" ? "sell" : "rent",
+      type: sellType === "Sell Property" ? "sell" : "rent",
       rooms: rooms,
       priceRange: "Rs " + price[0] + " - " + price[1] + " L",
       areaRange: area[0] + "-" + area[1] + " sq.ft",
@@ -409,7 +410,7 @@ function SellForm(props) {
                     ></TextField>
                   </Grid>
                   <Grid item xs={10} style={{ marginBottom: 10 }}>
-                    {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <LocalizationProvider dateAdapter={AdapterDateFns} >
                       <DesktopDatePicker
                         label="Possession"
                         inputFormat="yyyy-MM"
@@ -421,7 +422,7 @@ function SellForm(props) {
                         }}
                         renderInput={(params) => <TextField {...params} />}
                       />
-                    </LocalizationProvider> */}
+                    </LocalizationProvider>
                   </Grid>
                   <Grid item xs={10}>
                     <TextField
