@@ -1,17 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import registerServiceWorker from './registerServiceWorker';
+const script = document.createElement("script");
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+    script.src = "https://apis.mapmyindia.com/advancedmaps/v1/0a44c8f158050df757c91029e556b986/map_load?v=1.5";
+    script.async = false;
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    document.body.appendChild(script);
+
+    script.src = "https://apis.mapmyindia.com/advancedmaps/v1/0a44c8f158050df757c91029e556b986/map_load?v=1.5";
+    script.async = false;
+
+    document.body.appendChild(script);
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();

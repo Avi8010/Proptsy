@@ -1,8 +1,9 @@
-import { Card, CardActionArea, CardContent, CardMedia, makeStyles, Typography } from "@material-ui/core";
 import * as React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/property.css";
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
+import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {

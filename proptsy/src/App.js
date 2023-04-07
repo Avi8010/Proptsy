@@ -8,7 +8,8 @@ import IndivProperty from './components/IndivProperty';
 import NotFound from './components/NotFound';
 import PropertyPage from './components/PropertyPage';
 import LoginPage from './components/LoginPage';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 function App() {
   return (
     <div className="App">

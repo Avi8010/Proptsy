@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core";
 import bImg from "../images/navpic8.jpg";
 import icon from "../images/icon.png";
 import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from "@mui/material";
-import { MenuBook, MenuOpen, MenuRounded } from "@mui/icons-material";
+import { MenuOpen, MenuRounded } from "@mui/icons-material";
 
 const pages = ["Buy", "Sell", "Rent"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -20,11 +20,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const styles = {
-//   customizeToolbar: {
-//     minHeight: 72,
-//   },
-// };
+const styles = {
+  customizeToolbar: {
+    minHeight: 72,
+  },
+};
 
 function MyAppBar({ isBg }) {
   const navigate = useNavigate();
@@ -119,7 +119,7 @@ function MyAppBar({ isBg }) {
                 onClick={handleOpenNavMenu}
                 color="inherit"
               >
-                <MenuBook />
+                {/* <MenuBook /> */}
               </IconButton>
               <Menu
                 id="menu-appbar"

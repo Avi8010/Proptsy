@@ -5,7 +5,7 @@ import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
-// import { Map } from "./Map";
+import { Map } from "./Map";
 import PoolIcon from "@mui/icons-material/Pool";
 import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
@@ -24,6 +24,11 @@ import axios from "axios";
 import logo from "../images/navpic8.jpg";
 
 export default function IndivProperty() {
+  const [IsPaymentClicked, setIsPaymentClicked] = useState(false);
+  const [isLocateClicked, setIsLocateClicked] = useState(false);
+  const [progress, setProgress] = useState(false);
+  const [name, setName] = useState("Sanket");
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,10 +40,7 @@ export default function IndivProperty() {
   if (!propertyData) return <div>404 Not Found</div>;
   console.log(propertyData);
 
-  const [IsPaymentClicked, setIsPaymentClicked] = useState(false);
-  const [isLocateClicked, setIsLocateClicked] = useState(false);
-  const [progress, setProgress] = useState(false);
-
+ 
   const colors = [
     "cadetblue",
     "yellowgreen",
@@ -196,8 +198,6 @@ export default function IndivProperty() {
     });
   }
 
-  const [name, setName] = useState("Sanket");
-
   async function displayRazorpay() {
     console.log("Nooo");
     const res = await loadScript(
@@ -266,7 +266,7 @@ export default function IndivProperty() {
           setProgressBar={setProgress}
         />
       )}
-      {IsPaymentClicked && displayRazorpay()}
+      {/* {IsPaymentClicked && displayRazorpay()} */}
       <CircularProgress className="progressBar" color="secondary" />
     </div>
   ) : (

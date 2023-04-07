@@ -4,8 +4,9 @@ import MyAppBar from "./MyAppBar";
 import Property from "./property";
 import "../styles/propertyPage.css";
 import axios from "axios";
+import { Container, Grid, Paper, experimentalStyled as styled } from "@mui/material";
 // import { useRef } from "react";
-import { Container, Grid, Paper, styled } from "@material-ui/core";
+// import { Container, Grid, Paper, styled } from "@material-ui/core";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",

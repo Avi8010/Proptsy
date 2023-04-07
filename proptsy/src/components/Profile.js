@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import TableUI from "./TableUI";
 import "../styles/profile.css";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import MyAppBar from "./MyAppBar";
+import { useState } from "react";
 
 function loadData(endpoint, parameters, setData) {
   axios
@@ -73,45 +74,43 @@ export default function Profile() {
           src="https://images.pexels.com/photos/1037993/pexels-photo-1037993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt=""
         />
-        <div className="container d-flex justify-content-center align-items-center">
-          <div className="card">
-            <div className="upper">
+        <div class="container d-flex justify-content-center align-items-center">
+          <div class="card">
+            <div class="upper">
               {" "}
               <img
                 src="https://i.imgur.com/Qtrsrk5.jpg"
-                className="img-fluid"
-                alt=""
+                class="img-fluid"
               />{" "}
             </div>
-            <div className="user text-center">
-              <div className="profile">
+            <div class="user text-center">
+              <div class="profile">
                 {" "}
                 <img
                   src={process.env.PUBLIC_URL + "/letters/" + fletter + ".jpg"}
-                  className="rounded-circle"
-                  width="180"
-                  alt=""
+                  class="rounded-circle"
+                  width="80"
                 />{" "}
               </div>
             </div>
-            <div className="mt-5 text-center">
-              <h4 className="mb-0">{uname}</h4>{" "}
-              <span className="text-muted d-block mb-2">India</span>
-              <div className="d-flex justify-content-between align-items-center mt-4 px-4">
-                <div className="stats">
-                  <h6 className="mb-0">Bought Properties</h6>{" "}
+            <div class="mt-5 text-center">
+              <h4 class="mb-0">{uname}</h4>{" "}
+              <span class="text-muted d-block mb-2">India</span>
+              <div class="d-flex justify-content-between align-items-center mt-4 px-4">
+                <div class="stats">
+                  <h6 class="mb-0">Bought Properties</h6>{" "}
                   <span>{boughtPropertyRows.length}</span>
                 </div>
-                <div className="stats">
-                  <h6 className="mb-0">Sold Properties</h6>{" "}
+                <div class="stats">
+                  <h6 class="mb-0">Sold Properties</h6>{" "}
                   <span>{soldPropertyRows.length}</span>
                 </div>
-                <div className="stats">
-                  <h6 className="mb-0">On Rent Properties</h6>{" "}
+                <div class="stats">
+                  <h6 class="mb-0">On Rent Properties</h6>{" "}
                   <span>{onrentPropertyRows.length}</span>
                 </div>
-                <div className="stats">
-                  <h6 className="mb-0">Rented Properties</h6>{" "}
+                <div class="stats">
+                  <h6 class="mb-0">Rented Properties</h6>{" "}
                   <span>{rentedPropertyRows.length}</span>
                 </div>
               </div>

@@ -16,9 +16,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/sellForm.css";
-// import { DesktopDatePicker } from "@mui/lab";
 import { Slider } from "@mui/material";
 import { DesktopDatePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 
 const styles = (theme) => ({
   root: {
@@ -146,7 +146,7 @@ function SellForm(props) {
 
   useEffect(() => {
     const currUser = localStorage.getItem("userName");
-    if (currUser === "null") navigate("/sell");
+    if (currUser === "null") navigate("/login");
   }, []);
 
   async function registerProperty(e) {
@@ -410,7 +410,7 @@ function SellForm(props) {
                     ></TextField>
                   </Grid>
                   <Grid item xs={10} style={{ marginBottom: 10 }}>
-                    <LocalizationProvider dateAdapter={AdapterDateFns} >
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
                       <DesktopDatePicker
                         label="Possession"
                         inputFormat="yyyy-MM"
@@ -420,7 +420,7 @@ function SellForm(props) {
                           console.log(e);
                           setVal(e);
                         }}
-                        renderInput={(params) => <TextField {...params} />}
+                        textField={(params) => <TextField {...params} />}
                       />
                     </LocalizationProvider>
                   </Grid>
