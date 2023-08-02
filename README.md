@@ -1,5 +1,5 @@
 <p align="center">
- <img width=300px height=auto src="proptsy/src/images/iconn.png" alt="logo"></a>
+ <img width=300px height=auto src="proptsy/src/images/icon.png" alt="logo"></a>
 </p>
 
 <h3 align="center">Online Property Management System</h3>
