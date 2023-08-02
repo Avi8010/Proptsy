@@ -1,5 +1,5 @@
 <p align="center">
- <img width=300px height=auto src="client/src/images/Icon.png" alt="logo"></a>
+ <img width=300px height=auto src="proptsy/src/images/icon.png" alt="logo"></a>
 </p>
 
 <h3 align="center">Online Property Management System</h3>
@@ -28,7 +28,7 @@ Steps :
 
 1. Clone the project
 ```
-git clone https://github.com/Avi80101/Proptsy.git
+git clone https://github.com/Avi8010/Proptsy.git
 ```
 
 2. Installing dependancies
