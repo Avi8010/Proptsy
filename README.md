@@ -1,5 +1,6 @@
+
 <p align="center">
- <img width=300px height=auto src="proptsy/src/images/icon.png" alt="logo"></a>
+<img src=https://github.com/Avi8010/Proptsy/assets/124759114/c558de9d-094d-4c40-be0e-018157beae9f)
 </p>
 
 <h3 align="center">Online Property Management System</h3>
